@@ -1,0 +1,17 @@
+syntax = "proto3";
+package raficoinnetwork.raficoinnetwork;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+import "raficoinnetwork/raficoinnetwork/params.proto";
+
+option go_package = "RafiCoinNetwork/x/raficoinnetwork/types";
+
+// GenesisState defines the raficoinnetwork module's genesis state.
+message GenesisState {
+  // params defines all the parameters of the module.
+  Params params = 1 [
+    (gogoproto.nullable) = false,
+    (amino.dont_omitempty) = true
+  ];
+}
